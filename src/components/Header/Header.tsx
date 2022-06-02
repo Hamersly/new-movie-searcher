@@ -3,13 +3,13 @@ import Box from "@mui/material/Box";
 import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 import IconButton from "@mui/material/IconButton";
-import {Link} from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import HomeIcon from '@mui/icons-material/Home';
 import Typography from "@mui/material/Typography";
 import {HeaderAppBar, HeaderToolbar} from "./Header.styles";
+import {LinkStyle} from "../LinkStyle/LinkStyle";
 
 
 export const Header: FC = () => {
@@ -48,34 +48,32 @@ export const Header: FC = () => {
 						onClose={handleClose}
 						MenuListProps={{
 							'aria-labelledby': 'basic-button',
+							sx: {backgroundColor: "gray"}
 						}}
 					>
-						<Link className="link" to="/movie">
-							<MenuItem onClick={() => handleFormat("movie")}>
-								<LocalMoviesIcon/>
-								<Typography ml={"10px"} variant="h6" component="div">
-									Фильмы
-								</Typography>
-							</MenuItem>
-						</Link>
 
-						<Link className="link" to="/tv">
-							<MenuItem onClick={() => handleFormat("tv")}>
-								<LiveTvIcon/>
-								<Typography ml={"10px"} variant="h6" component="div">
-									Сериалы
-								</Typography>
-							</MenuItem>
-						</Link>
+						<MenuItem onClick={handleClose}>
+							<HomeIcon/>
+							<Typography ml={"10px"} variant="h6" component="div">
+								<LinkStyle to="/">Главная</LinkStyle>
+							</Typography>
+						</MenuItem>
 
-						<Link className="link" to="/">
-							<MenuItem onClick={handleClose}>
-								<HomeIcon/>
-								<Typography ml={"10px"} variant="h6" component="div">
-									Главная
-								</Typography>
-							</MenuItem>
-						</Link>
+						<MenuItem onClick={() => handleFormat("movie")}>
+							<LocalMoviesIcon/>
+							<Typography ml={"10px"} variant="h6" component="div">
+								<LinkStyle to="/movie">Фильмы</LinkStyle>
+							</Typography>
+						</MenuItem>
+
+						<MenuItem onClick={() => handleFormat("tv")}>
+							<LiveTvIcon/>
+							<Typography ml={"10px"} variant="h6" component="div">
+								<LinkStyle to="/tv">Сериалы</LinkStyle>
+							</Typography>
+						</MenuItem>
+
+
 					</Menu>
 				</Box>
 
