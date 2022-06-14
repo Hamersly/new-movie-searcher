@@ -2,7 +2,7 @@ import {Box} from "@mui/material";
 import React, {FC} from "react";
 import Backdrop from "@mui/material/Backdrop";
 import {LinkStyle} from "../LinkStyle/LinkStyle";
-import {UnitTopography} from "./CounterUnit.styles";
+import {UnitBox, UnitInfoBox, UnitTopography} from "./CounterUnit.styles";
 
 interface Props {
 	format: string;
@@ -20,53 +20,48 @@ export const ContentUnit: FC<Props> = ({format, result}) => {
 	};
 
 	return (
-		<Box sx={{borderBottom: "1px solid black"}}>
-			<Box sx={{display: "flex", margin: "35px 0"}}>
-
-				<Box>
+		<UnitBox>
+			<Box>
+				<img
+					onClick={handleToggle}
+					width="100px"
+					src={`https://image.tmdb.org/t/p/w200${result.poster_path}`}
+				/>
+				<Backdrop
+					sx={{color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1}}
+					open={open}
+					onClick={handleClose}
+				>
 					<img
-						onClick={handleToggle}
-						width="100px"
-						src={`https://image.tmdb.org/t/p/w200${result.poster_path}`}
+						height="70%"
+						src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
 					/>
-					<Backdrop
-						sx={{color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1}}
-						open={open}
-						onClick={handleClose}
-					>
-						<img
-							height="70%"
-							src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
-						/>
-					</Backdrop>
-				</Box>
-				<LinkStyle to={`${format}_${result.id}`}>
-					<Box
-						sx={{
-							display: "flex",
-							flexDirection: "column",
-							marginLeft: "10px",
-							width: "100%",
-						}}
-					>
-						<UnitTopography variant="h6">
-							{format === "movie" ? result.title :
-								format === "tv" && result.name}
-						</UnitTopography>
-						<UnitTopography mt={2} variant="inherit">
-							{format === "movie" ? result.original_title :
-								format === "tv" && result.original_name}
-						</UnitTopography>
-						<UnitTopography mt={2} variant="inherit">
-							Премьера: {format === "movie" ? result.release_date :
-							format === "tv" && result.first_air_date}
-						</UnitTopography>
-						<UnitTopography mt={2} variant="inherit">
-							Рейтинг: {result.popularity}
-						</UnitTopography>
-					</Box>
-				</LinkStyle>
+				</Backdrop>
 			</Box>
-		</Box>
+			<LinkStyle to={`${format}_${result.id}`}>
+				<UnitInfoBox>
+
+					<UnitTopography variant="h6">
+						{format === "movie" ? result.title :
+							format === "tv" && result.name}
+					</UnitTopography>
+
+					<UnitTopography mt={2} variant="inherit">
+						{format === "movie" ? result.original_title :
+							format === "tv" && result.original_name}
+					</UnitTopography>
+
+					<UnitTopography mt={2} variant="inherit">
+						Премьера: {format === "movie" ? result.release_date :
+						format === "tv" && result.first_air_date}
+					</UnitTopography>
+
+					<UnitTopography mt={2} variant="inherit">
+						Рейтинг: {result.popularity}
+					</UnitTopography>
+
+				</UnitInfoBox>
+			</LinkStyle>
+		</UnitBox>
 	);
 };

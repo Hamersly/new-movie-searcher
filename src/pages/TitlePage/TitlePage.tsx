@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import {TitleBox} from "../components/TitleBox/TitleBox";
+import {TitleBox} from "../../components/TitleBox/TitleBox";
 
 export const TitlePage: FC = () => {
 	return (
