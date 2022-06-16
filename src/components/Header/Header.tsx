@@ -10,6 +10,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import Typography from "@mui/material/Typography";
 import {HeaderAppBar, HeaderToolbar} from "./Header.styles";
 import {LinkStyle} from "../LinkStyle/LinkStyle";
+import {Search} from "../Search/Search";
 
 
 export const Header: FC = () => {
@@ -78,6 +79,10 @@ export const Header: FC = () => {
 				</Box>
 
 				<Box>
+				</Box>
+
+				<Box>
+					<Search/>
 				</Box>
 
 			</HeaderToolbar>

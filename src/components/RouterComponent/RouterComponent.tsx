@@ -6,6 +6,7 @@ import {Footer} from "../Footer/Footer";
 import {TitlePage} from "../../pages/TitlePage/TitlePage";
 import {ContentListPage} from "../../pages/ContentListPage/ContentListPage";
 import {DetailPage} from "../../pages/DetailPage/DetailPage";
+import {SearchPage} from "../../pages/SearchPage/SearchPage";
 
 export const RouterComponent: FC = () => {
 	return (
@@ -28,6 +29,10 @@ export const RouterComponent: FC = () => {
 
 					<Route exact path="/:info">
 						<DetailPage/>
+					</Route>
+
+					<Route path="/search_results">
+						<SearchPage/>
 					</Route>
 
 					<Redirect to="/"/>
