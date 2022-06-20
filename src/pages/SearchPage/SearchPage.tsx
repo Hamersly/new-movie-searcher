@@ -27,7 +27,7 @@ export const SearchPage: FC = () => {
                     onChange={handleChange}/>
       </CLBox>}
 			{results ? results.map((result: any) =>
-					<ContentUnit format={"movie"} result={result} key={result.id}/>)
+					<ContentUnit format={"movie"} content={result} key={result.id}/>)
 				:
 				<Loader/>
 			}

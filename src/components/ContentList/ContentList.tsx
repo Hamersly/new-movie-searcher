@@ -7,7 +7,7 @@ import {CLBox, CLContainer} from "./ContentList.styles";
 interface Props {
 	format: string;
 	page: number;
-	results: any;
+	results: [];
 	total_pages: number;
 	handleChange: any;
 }
@@ -20,7 +20,7 @@ export const ContentList: FC<Props> = ({format, page, results, total_pages, hand
         <Pagination count={total_pages > 100 ? 100 : total_pages} siblingCount={1} page={page} onChange={handleChange}/>
       </CLBox>}
 			{results ? results.map((result: any) =>
-					<ContentUnit format={format} result={result} key={result.id}/>)
+					<ContentUnit format={format} content={result} key={result.id}/>)
 				:
 				<Loader/>
 			}

@@ -7,28 +7,37 @@ import {TitlePage} from "../../pages/TitlePage/TitlePage";
 import {ContentListPage} from "../../pages/ContentListPage/ContentListPage";
 import {DetailPage} from "../../pages/DetailPage/DetailPage";
 import {SearchPage} from "../../pages/SearchPage/SearchPage";
+import {ScrollToTop} from "../ScrollToTop/ScrollToTop";
 
 export const RouterComponent: FC = () => {
+
 	return (
 		<RouterBox>
 			<HashRouter>
 				<Header/>
 				<Switch>
-
 					<Route exact path="/">
-						<TitlePage/>
+						<ScrollToTop>
+							<TitlePage/>
+						</ScrollToTop>
 					</Route>
 
 					<Route exact path="/movie">
-						<ContentListPage format={"movie"}/>
+						<ScrollToTop>
+							<ContentListPage format={"movie"}/>
+						</ScrollToTop>
 					</Route>
 
 					<Route exact path="/tv">
-						<ContentListPage format={"tv"}/>
+						<ScrollToTop>
+							<ContentListPage format={"tv"}/>
+						</ScrollToTop>
 					</Route>
 
 					<Route exact path="/:info">
-						<DetailPage/>
+						<ScrollToTop>
+							<DetailPage/>
+						</ScrollToTop>
 					</Route>
 
 					<Route path="/search_results">

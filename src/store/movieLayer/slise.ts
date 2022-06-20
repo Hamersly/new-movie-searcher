@@ -1,4 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {ContentList, DetailResponse} from "../../types/types";
 
 interface CounterState {
 	content: object;
@@ -14,27 +15,33 @@ const movieSlice = createSlice({
 	name: "movie",
 	initialState,
 	reducers: {
-		addContentList(state, action: PayloadAction<{ format: string, content: object }>) {
+		addContentList(state, action: PayloadAction<ContentList>) {
 			const {format, content} = action.payload
 			state.content = content;
 			state.format = format;
 		},
-		addContentDetail(state, action: PayloadAction<object>) {
-			console.log(action.payload)
+
+		addContentDetail(state, action: PayloadAction<DetailResponse>) {
 			state.detail = action.payload
 		},
+
+		clearDetail(state, action:PayloadAction<object>) {
+			state.detail = action.payload
+		},
+
 		changeFormat(state, action: PayloadAction<string>) {
 			state.format = action.payload
 		},
+
 		addSearchList(state, action: PayloadAction<object>) {
-			console.log(action.payload)
 			state.searchList = action.payload
 		},
+
 		addSearchValue(state, action: PayloadAction<string>) {
 			state.searchValue = action.payload
 		}
 	},
 });
 
-export const {addContentList, addContentDetail, addSearchValue, addSearchList} = movieSlice.actions;
+export const {addContentList, addContentDetail, addSearchValue, addSearchList, clearDetail} = movieSlice.actions;
 export default movieSlice.reducer;

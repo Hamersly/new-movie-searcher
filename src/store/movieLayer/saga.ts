@@ -2,6 +2,8 @@ import {call, put, takeLeading} from "redux-saga/effects";
 import {detailApi, listApi, searchApi} from "./api";
 import {addContentDetail, addContentList, addSearchList, addSearchValue} from "./slise";
 import {getContentDetails, getContentList, searchValue} from "./actions";
+import {DetailResponse, ListResponse} from "../../types/types";
+
 
 export function* getMoviesSaga() {
 	yield takeLeading(getContentList, getMoviesWorker);
@@ -10,31 +12,29 @@ export function* getMoviesSaga() {
 function* getMoviesWorker(action: any) {
 	const {format, page} = action.payload
 	try {
-		const movies: object = yield call(
-			listApi,
-			format,
-			page
-		);
-		yield put(addContentList({format, content: movies}));
+		const content: ListResponse = yield call(listApi, format, page);
+		yield put(addContentList({format, content}));
 	} catch (err) {
 		console.log(err);
 	}
+
 }
+
 
 export function* getDetailsSaga() {
 	yield takeLeading(getContentDetails, getDetailsWorker);
 }
 
 function* getDetailsWorker(action: any) {
-	// console.log(action.payload)
 	const {format, id} = action.payload
 	try {
-		const detail: object = yield call(detailApi, format, id);
+		const detail: DetailResponse = yield call(detailApi, format, id);
 		yield put(addContentDetail(detail));
 	} catch (err) {
 		console.log(err);
 	}
 }
+
 
 export function* searchSaga() {
 	yield takeLeading(searchValue, searchWorker);

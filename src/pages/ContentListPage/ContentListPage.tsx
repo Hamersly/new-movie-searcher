@@ -6,6 +6,7 @@ import {Pagination} from "@mui/material";
 import {Loader} from "../../components/Loader/Loader";
 import {ContentUnit} from "../../components/ContentUnit/ContentUnit";
 import {CLBox, CLContainer} from "./ContentListPage.styles";
+import {Content, ListResponse} from "../../types/types";
 
 interface Props {
 	format: string
@@ -13,7 +14,7 @@ interface Props {
 
 export const ContentListPage: FC<Props> = ({format}) => {
 
-	const {page, results, total_pages} = useSelector(contentSelector);
+	const {page, results, total_pages}: ListResponse = useSelector(contentSelector);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -33,8 +34,8 @@ export const ContentListPage: FC<Props> = ({format}) => {
                     variant="outlined"
                     onChange={handleChange}/>
       </CLBox>}
-			{results ? results.map((result: any) =>
-					<ContentUnit format={format} result={result} key={result.id}/>)
+			{results ? results.map((result: Content) =>
+					<ContentUnit format={format} content={result} key={result.id}/>)
 				:
 				<Loader/>
 			}

@@ -4,8 +4,9 @@ import Typography from "@mui/material/Typography";
 import {useParams} from "react-router-dom";
 import {getContentDetails} from "../../store/movieLayer/actions";
 import {detailSelector} from "../../store/movieLayer/selectors";
-import {addContentDetail} from "../../store/movieLayer/slise";
+import {clearDetail} from "../../store/movieLayer/slise";
 import {DetailBox, DetailContainer, DetailInfoBox} from "./DetailPage.styles";
+import {DetailResponse} from "../../types/types";
 
 interface Params {
 	info: string
@@ -20,12 +21,12 @@ export const DetailPage: FC = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(addContentDetail({}))
+		dispatch(clearDetail({}))
 		dispatch(getContentDetails({format, id}));
 	}, []);
 
 	const detail = useSelector(detailSelector);
-	const {title, original_title, name, original_name, backdrop_path, overview} = detail
+	const {title, original_title, name, original_name, backdrop_path, overview}: DetailResponse = detail
 
 	return (
 		<DetailContainer>
@@ -37,8 +38,10 @@ export const DetailPage: FC = () => {
 					{format === "movie" ? original_title : original_name}
 				</Typography>
 				<DetailInfoBox>
-					<img width="100%"
-							 src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
+					<img
+						width="100%"
+						alt=""
+						src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
 					/>
 				</DetailInfoBox>
 				<DetailInfoBox>
