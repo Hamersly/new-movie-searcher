@@ -6,7 +6,7 @@ import {UnitBox, UnitInfoBox, UnitTopography} from "./CounterUnit.styles";
 import {Content} from "../../types/types";
 
 interface Props {
-	format: string;
+	format?: string;
 	content: any;
 }
 

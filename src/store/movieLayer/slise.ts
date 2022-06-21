@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {ContentList, DetailResponse} from "../../types/types";
+import {ContentList, DetailResponse, SearchResponse} from "../../types/types";
 
 interface CounterState {
 	content: object;
@@ -25,7 +25,7 @@ const movieSlice = createSlice({
 			state.detail = action.payload
 		},
 
-		clearDetail(state, action:PayloadAction<object>) {
+		clearDetail(state, action: PayloadAction<object>) {
 			state.detail = action.payload
 		},
 
@@ -33,7 +33,7 @@ const movieSlice = createSlice({
 			state.format = action.payload
 		},
 
-		addSearchList(state, action: PayloadAction<object>) {
+		addSearchList(state, action: PayloadAction<SearchResponse>) {
 			state.searchList = action.payload
 		},
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import {DetailResponse, ListResponse} from "../../types/types";
+import {DetailResponse, ListResponse, SearchResponse} from "../../types/types";
 
 export async function listApi(
 	format: string,
@@ -35,12 +35,10 @@ export async function searchApi(query: string, queryPage: number): Promise<objec
 	const BASE_URL: string = "https://api.themoviedb.org/3";
 	const url: string = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=ru-RU&query=${query}&page=${queryPage}`;
 
-	const results: [] = await axios
+	const {page, results, total_pages}: SearchResponse = await axios
 		.get(url)
 		.then((response: any) => response.data)
 		.catch((error) => console.log(error));
 
-	// console.log(query);
-
-	return results;
+	return {page, results, total_pages};
 }

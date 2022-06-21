@@ -34,14 +34,14 @@ export const RouterComponent: FC = () => {
 						</ScrollToTop>
 					</Route>
 
+					<Route path="/search_results">
+						<SearchPage/>
+					</Route>
+
 					<Route exact path="/:info">
 						<ScrollToTop>
 							<DetailPage/>
 						</ScrollToTop>
-					</Route>
-
-					<Route path="/search_results">
-						<SearchPage/>
 					</Route>
 
 					<Redirect to="/"/>

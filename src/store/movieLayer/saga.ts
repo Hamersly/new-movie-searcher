@@ -2,7 +2,7 @@ import {call, put, takeLeading} from "redux-saga/effects";
 import {detailApi, listApi, searchApi} from "./api";
 import {addContentDetail, addContentList, addSearchList, addSearchValue} from "./slise";
 import {getContentDetails, getContentList, searchValue} from "./actions";
-import {DetailResponse, ListResponse} from "../../types/types";
+import {DetailResponse, ListResponse, SearchResponse} from "../../types/types";
 
 
 export function* getMoviesSaga() {
@@ -41,12 +41,11 @@ export function* searchSaga() {
 }
 
 function* searchWorker(action: any) {
-	console.log(action.payload)
 	const {query, page} = action.payload
 	try {
-		const searchList: object = yield call(searchApi, query, page);
+		const searchContent: SearchResponse = yield call(searchApi, query, page);
 		yield put(addSearchValue(query));
-		yield put(addSearchList(searchList));
+		yield put(addSearchList(searchContent));
 	} catch (err) {
 		console.log(err);
 	}

@@ -29,3 +29,10 @@ export interface ContentList {
 	format: string;
 	content: ListResponse;
 }
+
+export interface SearchResponse extends ListResponse {
+}
+
+export interface HandleChangeFunc {
+	(event: object, value: number): void
+}

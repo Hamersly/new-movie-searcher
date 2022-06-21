@@ -3,9 +3,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import {useDispatch} from "react-redux";
 import {searchValue} from "../../store/movieLayer/actions";
 import {SearchIconWrapper, SearchTag, StyledInputBase} from "./Search.styles"
+import {useHistory} from "react-router-dom"
 
 
 export const Search: FC = () => {
+	const history = useHistory();
 	const [query, setQuery] = useState("");
 	const dispatch = useDispatch();
 
@@ -13,6 +15,7 @@ export const Search: FC = () => {
 		if (query.trim().length) {
 			dispatch(searchValue({query, page: 1}));
 			setQuery("");
+			history.push("/search_results")
 		}
 	};
 
