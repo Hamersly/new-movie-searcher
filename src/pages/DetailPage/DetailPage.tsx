@@ -9,47 +9,47 @@ import {DetailBox, DetailContainer, DetailInfoBox} from "./DetailPage.styles";
 import {DetailResponse} from "../../types/types";
 
 interface Params {
-	info: string
+  info: string
 }
 
 export const DetailPage: FC = () => {
-	const {info}: Params = useParams();
-	const value = info.split("_")
-	const format = value[0]
-	const id = value[1]
+  const {info}: Params = useParams();
+  const value = info.split("_")
+  const format = value[0]
+  const id = value[1]
 
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	useEffect(() => {
-		dispatch(clearDetail({}))
-		dispatch(getContentDetails({format, id}));
-	}, []);
+  useEffect(() => {
+    dispatch(clearDetail({}))
+    dispatch(getContentDetails({format, id}));
+  }, []);
 
-	const detail = useSelector(detailSelector);
-	const {title, original_title, name, original_name, backdrop_path, overview}: DetailResponse = detail
+  const detail = useSelector(detailSelector);
+  const {title, original_title, name, original_name, backdrop_path, overview}: DetailResponse = detail
 
-	return (
-		<DetailContainer>
-			<DetailBox>
-				<Typography variant="h3" component="div">
-					{format === "movie" ? title : name}
-				</Typography>
-				<Typography variant="h5" component="div">
-					{format === "movie" ? original_title : original_name}
-				</Typography>
-				<DetailInfoBox>
-					<img
-						width="100%"
-						alt=""
-						src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
-					/>
-				</DetailInfoBox>
-				<DetailInfoBox>
-					<Typography variant="h5" component="div">
-						{overview}
-					</Typography>
-				</DetailInfoBox>
-			</DetailBox>
-		</DetailContainer>
-	);
+  return (
+    <DetailContainer>
+      <DetailBox>
+        <Typography variant="h3" component="div">
+          {format === "movie" ? title : name}
+        </Typography>
+        <Typography variant="h5" component="div">
+          {format === "movie" ? original_title : original_name}
+        </Typography>
+        <DetailInfoBox>
+          <img
+            width="100%"
+            alt=""
+            src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
+          />
+        </DetailInfoBox>
+        <DetailInfoBox>
+          <Typography variant="h5" component="div">
+            {overview}
+          </Typography>
+        </DetailInfoBox>
+      </DetailBox>
+    </DetailContainer>
+  );
 };

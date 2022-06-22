@@ -11,43 +11,43 @@ import {ScrollToTop} from "../ScrollToTop/ScrollToTop";
 
 export const RouterComponent: FC = () => {
 
-	return (
-		<RouterBox>
-			<HashRouter>
-				<Header/>
-				<Switch>
-					<Route exact path="/">
-						<ScrollToTop>
-							<TitlePage/>
-						</ScrollToTop>
-					</Route>
+  return (
+    <RouterBox>
+      <HashRouter>
+        <Header/>
+        <Switch>
+          <Route exact path="/">
+            <ScrollToTop>
+              <TitlePage/>
+            </ScrollToTop>
+          </Route>
 
-					<Route exact path="/movie">
-						<ScrollToTop>
-							<ContentListPage format={"movie"}/>
-						</ScrollToTop>
-					</Route>
+          <Route exact path="/movie">
+            <ScrollToTop>
+              <ContentListPage format={"movie"}/>
+            </ScrollToTop>
+          </Route>
 
-					<Route exact path="/tv">
-						<ScrollToTop>
-							<ContentListPage format={"tv"}/>
-						</ScrollToTop>
-					</Route>
+          <Route exact path="/tv">
+            <ScrollToTop>
+              <ContentListPage format={"tv"}/>
+            </ScrollToTop>
+          </Route>
 
-					<Route path="/search_results">
-						<SearchPage/>
-					</Route>
+          <Route path="/search_results">
+            <SearchPage/>
+          </Route>
 
-					<Route exact path="/:info">
-						<ScrollToTop>
-							<DetailPage/>
-						</ScrollToTop>
-					</Route>
+          <Route exact path="/:info">
+            <ScrollToTop>
+              <DetailPage/>
+            </ScrollToTop>
+          </Route>
 
-					<Redirect to="/"/>
-				</Switch>
-				<Footer/>
-			</HashRouter>
-		</RouterBox>
-	);
+          <Redirect to="/"/>
+        </Switch>
+        <Footer/>
+      </HashRouter>
+    </RouterBox>
+  );
 };

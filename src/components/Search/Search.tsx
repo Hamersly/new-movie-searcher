@@ -7,36 +7,36 @@ import {useHistory} from "react-router-dom"
 
 
 export const Search: FC = () => {
-	const history = useHistory();
-	const [query, setQuery] = useState("");
-	const dispatch = useDispatch();
+  const history = useHistory();
+  const [query, setQuery] = useState("");
+  const dispatch = useDispatch();
 
-	const searchText = () => {
-		if (query.trim().length) {
-			dispatch(searchValue({query, page: 1}));
-			setQuery("");
-			history.push("/search_results")
-		}
-	};
+  const searchText = () => {
+    if (query.trim().length) {
+      dispatch(searchValue({query, page: 1}));
+      setQuery("");
+      history.push("/search_results")
+    }
+  };
 
-	const handleSubmit = (e: any) => {
-		if (e.key === "Enter") {
-			searchText();
-		}
-	};
+  const handleSubmit = (e: any) => {
+    if (e.key === "Enter") {
+      searchText();
+    }
+  };
 
-	return (
-		<SearchTag>
-			<SearchIconWrapper>
-				<SearchIcon sx={{color: "white"}}/>
-			</SearchIconWrapper>
-			<StyledInputBase sx={{color: "white"}}
-											 placeholder="Search…"
-											 inputProps={{'aria-label': 'search'}}
-											 value={query}
-											 onChange={(e) => setQuery(e.target.value)}
-											 onKeyDown={handleSubmit}
-			/>
-		</SearchTag>
-	);
+  return (
+    <SearchTag>
+      <SearchIconWrapper>
+        <SearchIcon sx={{color: "white"}}/>
+      </SearchIconWrapper>
+      <StyledInputBase sx={{color: "white"}}
+                       placeholder="Search…"
+                       inputProps={{'aria-label': 'search'}}
+                       value={query}
+                       onChange={(e) => setQuery(e.target.value)}
+                       onKeyDown={handleSubmit}
+      />
+    </SearchTag>
+  );
 };

@@ -6,25 +6,25 @@ import {HandleChangeFunc, ListResponse} from "../../types/types";
 import {ContentList} from "../../components/ContentList/ContentList";
 
 interface Props {
-	format: string
+  format: string
 }
 
 export const ContentListPage: FC<Props> = ({format}) => {
 
-	const {page, results, total_pages}: ListResponse = useSelector(contentSelector);
-	const dispatch = useDispatch();
+  const {page, results, total_pages}: ListResponse = useSelector(contentSelector);
+  const dispatch = useDispatch();
 
-	useEffect(() => {
-		dispatch(getContentList({format, page}));
-	}, [format]);
-	const handleChange:HandleChangeFunc = (event: object, value: number) => {
-		dispatch(getContentList({format, page: value}));
-	};
-	return <ContentList
-		format={format}
-		page={page}
-		results={results}
-		total_pages={total_pages}
-		handleChange={handleChange}
-	/>
+  useEffect(() => {
+    dispatch(getContentList({format, page}));
+  }, [format]);
+  const handleChange: HandleChangeFunc = (event: object, value: number) => {
+    dispatch(getContentList({format, page: value}));
+  };
+  return <ContentList
+    format={format}
+    page={page}
+    results={results}
+    total_pages={total_pages}
+    handleChange={handleChange}
+  />
 };

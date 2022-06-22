@@ -6,18 +6,18 @@ import {HandleChangeFunc, SearchResponse} from "../../types/types";
 import {ContentList} from "../../components/ContentList/ContentList";
 
 export const SearchPage: FC = () => {
-	const {page, results, total_pages}: SearchResponse = useSelector(searchListSelector);
-	const query = useSelector(searchQuerySelector)
-	const dispatch = useDispatch();
+  const {page, results, total_pages}: SearchResponse = useSelector(searchListSelector);
+  const query = useSelector(searchQuerySelector)
+  const dispatch = useDispatch();
 
-	const handleChange: HandleChangeFunc = (event: object, value: number) => {
-		dispatch(searchValue({query, page: value}));
-	};
-	return <ContentList
-		format={'movie'}
-		page={page}
-		results={results}
-		total_pages={total_pages}
-		handleChange={handleChange}
-	/>
+  const handleChange: HandleChangeFunc = (event: object, value: number) => {
+    dispatch(searchValue({query, page: value}));
+  };
+  return <ContentList
+    format={'movie'}
+    page={page}
+    results={results}
+    total_pages={total_pages}
+    handleChange={handleChange}
+  />
 };

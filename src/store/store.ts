@@ -6,8 +6,8 @@ import movieSlice from "./movieLayer/slise";
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
-	reducer: {movie: movieSlice},
-	middleware: [...getDefaultMiddleware(), sagaMiddleware],
+  reducer: {movie: movieSlice},
+  middleware: [...getDefaultMiddleware(), sagaMiddleware],
 });
 
 sagaMiddleware.run(rootSaga);
