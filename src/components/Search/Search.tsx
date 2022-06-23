@@ -31,8 +31,8 @@ export const Search: FC = () => {
         <SearchIcon sx={{color: "white"}}/>
       </SearchIconWrapper>
       <StyledInputBase sx={{color: "white"}}
-                       placeholder="Search…"
-                       inputProps={{'aria-label': 'search'}}
+                       placeholder="Поиск…"
+                       inputProps={{'aria-label': 'поиск'}}
                        value={query}
                        onChange={(e) => setQuery(e.target.value)}
                        onKeyDown={handleSubmit}

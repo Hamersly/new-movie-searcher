@@ -3,7 +3,7 @@ import InputBase from "@mui/material/InputBase";
 
 export const SearchTag = styled('div')(({theme}) => ({
   position: 'relative',
-  borderRadius: theme.shape.borderRadius,
+  borderRadius: '50px',
   backgroundColor: alpha(theme.palette.common.black, 0.15),
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
