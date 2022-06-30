@@ -6,6 +6,6 @@ export const FooterBox = styled(Box)`
   justify-content: center;
   align-items: center;
   background-color: gray;
-  height: 100px;
+  height: 10vh;
 
 `

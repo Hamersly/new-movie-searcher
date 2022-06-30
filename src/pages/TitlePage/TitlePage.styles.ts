@@ -2,9 +2,20 @@ import {styled} from '@mui/material/styles';
 import {Box, Typography} from "@mui/material";
 
 export const TitleBox = styled(Box)`
+  background-image: url("https://s1.afisha.ru/mediastorage/1d/e0/c8b82f3dbfef42669026329de01d.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 85vh;
+
 `
 
 export const TitleOneTopography = styled(Typography)`
@@ -18,7 +29,4 @@ export const TitleTwoTopography = styled(Typography)`
   margin-top: 30px;
   color: #A9A9A9;
   text-shadow: 2px 2px 2px black;
-`
-export const TitleImgBox = styled(Box)`
-  margin: 35px;
 `

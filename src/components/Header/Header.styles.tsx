@@ -5,6 +5,8 @@ import Toolbar from "@mui/material/Toolbar";
 export const HeaderAppBar = styled(AppBar)`
   width: 100%;
   background: gray;
+  min-height: 5vh;
+
 `;
 
 export const HeaderToolbar = styled(Toolbar)`

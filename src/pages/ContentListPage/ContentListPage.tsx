@@ -17,9 +17,11 @@ export const ContentListPage: FC<Props> = ({format}) => {
   useEffect(() => {
     dispatch(getContentList({format, page}));
   }, [format]);
+
   const handleChange: HandleChangeFunc = (event: object, value: number) => {
     dispatch(getContentList({format, page: value}));
   };
+
   return <ContentList
     format={format}
     page={page}

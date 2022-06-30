@@ -27,6 +27,7 @@ export const ContentUnit: FC<Props> = ({format, content}) => {
   const handleClose = () => {
     setOpen(false);
   };
+
   const handleToggle = () => {
     setOpen(!open);
   };
@@ -46,9 +47,9 @@ export const ContentUnit: FC<Props> = ({format, content}) => {
           onClick={handleClose}
         >
           <img
-            height="70%"
+            width="100%"
             alt=''
-            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+            src={`https://image.tmdb.org/t/p/original${poster_path}`}
           />
         </Backdrop>
       </Box>
