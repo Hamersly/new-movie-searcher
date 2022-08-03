@@ -6,6 +6,7 @@ import {CLBox, CLContainer} from "./ContentList.styles";
 import {HandleChangeFunc} from "../../types/types";
 import ScrollToTop from "react-scroll-to-top";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import {FilterContent} from "../FilterContent/FilterContent";
 
 interface Props {
   format: string;
@@ -19,6 +20,9 @@ export const ContentList: FC<Props> = ({format, page, results, total_pages, hand
 
   return (
     <CLContainer>
+      <CLBox>
+        <FilterContent/>
+      </CLBox>
       {results && <CLBox>
         <Pagination count={total_pages > 100 ? 100 : total_pages} siblingCount={0} page={page} onChange={handleChange}/>
       </CLBox>}

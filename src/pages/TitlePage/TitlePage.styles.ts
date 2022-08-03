@@ -2,7 +2,6 @@ import {styled} from '@mui/material/styles';
 import {Box, Typography} from "@mui/material";
 
 export const TitleBox = styled(Box)`
-  background-image: url("https://s1.afisha.ru/mediastorage/1d/e0/c8b82f3dbfef42669026329de01d.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
