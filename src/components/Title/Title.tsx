@@ -1,7 +1,7 @@
 import React, {FC} from "react";
-import {TitleBox, TitleOneTopography, TitleTwoTopography} from "./TitlePage.styles";
+import {TitleBox, TitleOneTopography, TitleTwoTopography} from "./Title.styles";
 
-export const TitlePage: FC = () => {
+export const Title: FC = () => {
   return (
     <TitleBox>
       <TitleOneTopography variant="h2">

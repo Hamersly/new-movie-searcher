@@ -3,7 +3,7 @@ import {RouterBox} from "./RouterComponent.styles";
 import {HashRouter, Redirect, Route, Switch} from "react-router-dom";
 import {Header} from "../Header/Header"
 import {Footer} from "../Footer/Footer";
-import {TitlePage} from "../../pages/TitlePage/TitlePage";
+import {FirstPage} from "../../pages/FirstPage/FirstPage";
 import {ContentListPage} from "../../pages/ContentListPage/ContentListPage";
 import {DetailPage} from "../../pages/DetailPage/DetailPage";
 import {SearchPage} from "../../pages/SearchPage/SearchPage";
@@ -16,15 +16,15 @@ export const RouterComponent: FC = () => {
         <Header/>
         <Switch>
           <Route exact path="/">
-              <TitlePage/>
+            <FirstPage/>
           </Route>
 
           <Route exact path="/movie">
-              <ContentListPage format={"movie"}/>
+            <ContentListPage format={"movie"}/>
           </Route>
 
           <Route exact path="/tv">
-              <ContentListPage format={"tv"}/>
+            <ContentListPage format={"tv"}/>
           </Route>
 
           <Route path="/search_results">
@@ -32,7 +32,7 @@ export const RouterComponent: FC = () => {
           </Route>
 
           <Route exact path="/:info">
-              <DetailPage/>
+            <DetailPage/>
           </Route>
 
           <Redirect to="/"/>

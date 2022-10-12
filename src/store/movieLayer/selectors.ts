@@ -2,10 +2,10 @@ import {createSelector} from "@reduxjs/toolkit";
 
 const movie = (state: any) => state;
 
-export const allSelector = createSelector(movie, (state) => {
-  console.log(state.movie)
-  return state.movie
-});
+// export const allSelector = createSelector(movie, (state) => {
+//   console.log(state.movie)
+//   return state.movie
+// });
 
 export const contentSelector = createSelector(
   movie,
@@ -15,6 +15,16 @@ export const contentSelector = createSelector(
 export const detailSelector = createSelector(
   movie,
   (state) => state.movie.detail
+)
+
+export const topSelector = createSelector(
+  movie,
+  (state) => state.movie.topList
+)
+
+export const sortedSelector = createSelector(
+  movie,
+  (state) => state.movie.sort
 )
 
 export const searchQuerySelector = createSelector(

@@ -13,7 +13,10 @@ export const TitleBox = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 85vh;
+  justify-content: center;
+  padding-bottom: 20px;
+  //background-image: url("");
+  //min-height: 85vh;
 
 `
 

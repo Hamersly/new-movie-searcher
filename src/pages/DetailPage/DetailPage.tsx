@@ -68,10 +68,10 @@ export const DetailPage: FC = () => {
             </Backdrop>
           </DetailInfoBox>
           <DetailInfoBox>
-              {overview ? <Typography variant="h6" align="center">{overview}</Typography>
-                :
-                <Typography variant="h6" align="center">Нет информации о сюжете</Typography>
-              }
+            {overview ? <Typography variant="h6" align="center">{overview}</Typography>
+              :
+              <Typography variant="h6" align="center">Нет информации о сюжете</Typography>
+            }
           </DetailInfoBox>
         </DetailBox>
         :

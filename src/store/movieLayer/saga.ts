@@ -1,7 +1,7 @@
 import {call, put, takeLeading} from "redux-saga/effects";
-import {detailApi, listApi, searchApi} from "./api";
-import {addContentDetail, addContentList, addSearchList, addSearchValue} from "./slise";
-import {getContentDetails, getContentList, searchValue} from "./actions";
+import {detailApi, listApi, searchApi, topApi} from "./api";
+import {addContentDetail, addContentList, addSearchList, addSearchValue, addTopList} from "./slise";
+import {getContentDetails, getContentList, getTopList, searchValue} from "./actions";
 import {DetailResponse, ListResponse, SearchResponse} from "../../types/types";
 
 
@@ -10,9 +10,9 @@ export function* getMoviesSaga() {
 }
 
 function* getMoviesWorker(action: any) {
-  const {format, page} = action.payload
+  const {format, sorted, page} = action.payload
   try {
-    const content: ListResponse = yield call(listApi, format, page);
+    const content: ListResponse = yield call(listApi, format, sorted, page);
     yield put(addContentList({format, content}));
   } catch (err) {
     console.log(err);
@@ -46,6 +46,20 @@ function* searchWorker(action: any) {
     const searchContent: SearchResponse = yield call(searchApi, query, page);
     yield put(addSearchValue(query));
     yield put(addSearchList(searchContent));
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+
+export function* topListSaga() {
+  yield takeLeading(getTopList, topListWorker);
+}
+
+function* topListWorker() {
+  try {
+    const topListContent: {} = yield call(topApi)
+    yield put(addTopList(topListContent));
   } catch (err) {
     console.log(err);
   }
