@@ -8,8 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import HomeIcon from '@mui/icons-material/Home';
 import Typography from "@mui/material/Typography";
-import {HeaderAppBar, HeaderToolbar} from "./Header.styles";
-import {LinkStyle} from "../LinkStyle/LinkStyle";
+import {HeaderAppBar, HeaderLink, HeaderToolbar} from "./Header.styles";
 import {Search} from "../Search/Search";
 import {Title} from "../Title/Title";
 
@@ -60,21 +59,21 @@ export const Header: FC = () => {
               <MenuItem onClick={handleClose}>
                 <HomeIcon/>
                 <Typography ml={"10px"} variant="h6" component="div">
-                  <LinkStyle to="/">Главная</LinkStyle>
+                  <HeaderLink to="/">Главная</HeaderLink>
                 </Typography>
               </MenuItem>
 
               <MenuItem onClick={() => handleFormat("movie")}>
                 <LocalMoviesIcon/>
                 <Typography ml={"10px"} variant="h6" component="div">
-                  <LinkStyle to="/movie">Фильмы</LinkStyle>
+                  <HeaderLink to="/movie">Фильмы</HeaderLink>
                 </Typography>
               </MenuItem>
 
               <MenuItem onClick={() => handleFormat("tv")}>
                 <LiveTvIcon/>
                 <Typography ml={"10px"} variant="h6" component="div">
-                  <LinkStyle to="/tv">Сериалы</LinkStyle>
+                  <HeaderLink to="/tv">Сериалы</HeaderLink>
                 </Typography>
               </MenuItem>
 

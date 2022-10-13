@@ -1,16 +1,17 @@
+import {Box} from "@mui/material";
 import React, {FC} from "react";
-import {TitleBox, TitleOneTopography, TitleTwoTopography} from "./Title.styles";
+import {TitleLink, TitleOneTopography, TitleTwoTopography} from "./Title.styles";
 
 export const Title: FC = () => {
   return (
-    <TitleBox>
+    <Box>
       <TitleOneTopography variant="h2">
-        ВидеоПоиск
+        <TitleLink to="/">ВидеоПоиск</TitleLink>
       </TitleOneTopography>
       <TitleTwoTopography variant="h4">
-        фильмы и сериалы
+        <TitleLink to="/movie">Фильмы</TitleLink> и <TitleLink to="/tv">Сериалы</TitleLink>
       </TitleTwoTopography>
 
-    </TitleBox>
+    </Box>
   );
 };

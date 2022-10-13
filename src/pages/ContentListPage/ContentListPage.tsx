@@ -15,6 +15,7 @@ interface Props {
 export const ContentListPage: FC<Props> = ({format}) => {
   const sorted: string = useSelector(sortedSelector)
   const {page, results, total_pages}: ListResponse = useSelector(contentSelector);
+
   const dispatch = useDispatch();
 
   useEffect(() => {

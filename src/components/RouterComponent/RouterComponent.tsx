@@ -2,7 +2,6 @@ import {FC} from "react";
 import {RouterBox} from "./RouterComponent.styles";
 import {HashRouter, Redirect, Route, Switch} from "react-router-dom";
 import {Header} from "../Header/Header"
-import {Footer} from "../Footer/Footer";
 import {FirstPage} from "../../pages/FirstPage/FirstPage";
 import {ContentListPage} from "../../pages/ContentListPage/ContentListPage";
 import {DetailPage} from "../../pages/DetailPage/DetailPage";
@@ -37,7 +36,6 @@ export const RouterComponent: FC = () => {
 
           <Redirect to="/"/>
         </Switch>
-        <Footer/>
       </HashRouter>
     </RouterBox>
   );

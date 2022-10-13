@@ -1,9 +1,5 @@
 import {styled} from '@mui/material/styles';
-import {Box, Container} from "@mui/material";
-
-export const CLContainer = styled(Container)`
-  min-height: 85vh;
-`
+import {Box} from "@mui/material";
 
 export const CLBox = styled(Box)`
   display: flex;

@@ -1,7 +1,8 @@
 import {styled} from '@mui/material/styles';
-import {Box, Typography} from "@mui/material";
+import {Box, Container, Typography} from "@mui/material";
+import {Link} from "react-router-dom";
 
-export const UnitBox = styled(Box)`
+export const UnitBox = styled(Container)`
   display: flex;
   margin: 35px 0;
   padding-bottom: 35px;
@@ -17,3 +18,8 @@ export const UnitInfoBox = styled(Box)`
 export const UnitTopography = styled(Typography)`
   color: black;
 `
+
+export const UnitLink = styled(Link)`
+  text-decoration: none;
+  color: #FFFFFF;
+`;

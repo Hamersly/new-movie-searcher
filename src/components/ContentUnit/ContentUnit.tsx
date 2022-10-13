@@ -1,8 +1,7 @@
 import {Box} from "@mui/material";
 import React, {FC} from "react";
 import Backdrop from "@mui/material/Backdrop";
-import {LinkStyle} from "../LinkStyle/LinkStyle";
-import {UnitBox, UnitInfoBox, UnitTopography} from "./CounterUnit.styles";
+import {UnitBox, UnitInfoBox, UnitLink, UnitTopography} from "./CounterUnit.styles";
 import {Content} from "../../types/types";
 
 interface Props {
@@ -53,7 +52,7 @@ export const ContentUnit: FC<Props> = ({format, content}) => {
           />
         </Backdrop>
       </Box>
-      <LinkStyle to={`${format}_${id}`}>
+      <UnitLink to={`${format}_${id}`}>
         <UnitInfoBox>
 
           <UnitTopography variant="h6">
@@ -76,7 +75,7 @@ export const ContentUnit: FC<Props> = ({format, content}) => {
           </UnitTopography>
 
         </UnitInfoBox>
-      </LinkStyle>
+      </UnitLink>
     </UnitBox>
   );
 };
