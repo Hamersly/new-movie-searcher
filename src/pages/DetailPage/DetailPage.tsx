@@ -54,6 +54,10 @@ export const DetailPage: FC = () => {
               width="100%"
               alt=""
               src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
+              onError={({ currentTarget }) => {
+                currentTarget.onerror = null
+                currentTarget.src=`${process.env.REACT_APP_ERROR_IMG}`
+              }}
             />
             <Backdrop
               sx={{color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1}}

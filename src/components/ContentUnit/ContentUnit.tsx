@@ -39,16 +39,26 @@ export const ContentUnit: FC<Props> = ({format, content}) => {
           width="100px"
           alt=''
           src={`https://image.tmdb.org/t/p/w200${poster_path}`}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null
+            currentTarget.src=`${process.env.REACT_APP_ERROR_IMG}`
+          }}
         />
         <Backdrop
           sx={{color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1}}
           open={open}
           onClick={handleClose}
+
         >
           <img
             width="100%"
             alt=''
             src={`https://image.tmdb.org/t/p/original${poster_path}`}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null
+              currentTarget.src=`${process.env.REACT_APP_ERROR_IMG}`
+            }}
+
           />
         </Backdrop>
       </Box>
