@@ -2,14 +2,14 @@ import {Box} from "@mui/material";
 import React, {FC} from "react";
 import Backdrop from "@mui/material/Backdrop";
 import {UnitBox, UnitInfoBox, UnitLink, UnitTopography} from "./CounterUnit.styles";
-import {Content} from "../../types/types";
+import {IContent} from "../../types/types";
 
-interface Props {
+interface IProps {
   format?: string;
   content: any;
 }
 
-export const ContentUnit: FC<Props> = ({format, content}) => {
+export const ContentUnit: FC<IProps> = ({format, content}) => {
   const [open, setOpen] = React.useState(false);
   const {
     poster_path,
@@ -21,7 +21,7 @@ export const ContentUnit: FC<Props> = ({format, content}) => {
     release_date,
     first_air_date,
     popularity
-  }: Content = content
+  }: IContent = content
 
   const handleClose = () => {
     setOpen(false);

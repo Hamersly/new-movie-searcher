@@ -7,16 +7,16 @@ import {getContentDetails} from "../../store/movieLayer/actions";
 import {detailSelector} from "../../store/movieLayer/selectors";
 import {clearDetail} from "../../store/movieLayer/slise";
 import {DetailBox, DetailContainer, DetailInfoBox} from "./DetailPage.styles";
-import {DetailResponse} from "../../types/types";
+import {IDetailResponse} from "../../types/types";
 import {Loader} from "../../components/Loader/Loader";
 
-interface Params {
+interface IParams {
   info: string
 }
 
 export const DetailPage: FC = () => {
   const [open, setOpen] = React.useState(false);
-  const {info}: Params = useParams();
+  const {info}: IParams = useParams();
   const value = info.split("_")
   const format = value[0]
   const id = value[1]
@@ -29,7 +29,7 @@ export const DetailPage: FC = () => {
   }, [format]);
 
   const detail = useSelector(detailSelector);
-  const {title, original_title, name, original_name, backdrop_path, overview}: DetailResponse = detail
+  const {title, original_title, name, original_name, backdrop_path, overview}: IDetailResponse = detail
 
   const handleClose = () => {
     setOpen(false);

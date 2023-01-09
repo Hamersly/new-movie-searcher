@@ -2,7 +2,7 @@ import {call, put, takeLeading} from "redux-saga/effects";
 import {detailApi, listApi, searchApi, topApi} from "./api";
 import {addContentDetail, addContentList, addSearchList, addSearchValue, addTopList} from "./slise";
 import {getContentDetails, getContentList, getTopList, searchValue} from "./actions";
-import {DetailResponse, ListResponse, SearchResponse} from "../../types/types";
+import {IDetailResponse, IListResponse, ISearchResponse} from "../../types/types";
 
 
 export function* getMoviesSaga() {
@@ -12,7 +12,7 @@ export function* getMoviesSaga() {
 function* getMoviesWorker(action: any) {
   const {format, sorted, page} = action.payload
   try {
-    const content: ListResponse = yield call(listApi, format, sorted, page);
+    const content: IListResponse = yield call(listApi, format, sorted, page);
     yield put(addContentList({format, content}));
   } catch (err) {
     console.log(err);
@@ -28,7 +28,7 @@ export function* getDetailsSaga() {
 function* getDetailsWorker(action: any) {
   const {format, id} = action.payload
   try {
-    const detail: DetailResponse = yield call(detailApi, format, id);
+    const detail: IDetailResponse = yield call(detailApi, format, id);
     yield put(addContentDetail(detail));
   } catch (err) {
     console.log(err);
@@ -43,7 +43,7 @@ export function* searchSaga() {
 function* searchWorker(action: any) {
   const {query, page} = action.payload
   try {
-    const searchContent: SearchResponse = yield call(searchApi, query, page);
+    const searchContent: ISearchResponse = yield call(searchApi, query, page);
     yield put(addSearchValue(query));
     yield put(addSearchList(searchContent));
   } catch (err) {

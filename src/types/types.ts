@@ -1,4 +1,4 @@
-export interface Content {
+export interface IContent {
   poster_path: string;
   id: number;
   title: string;
@@ -10,13 +10,13 @@ export interface Content {
   popularity: number;
 }
 
-export interface ListResponse {
+export interface IListResponse {
   page: number;
   results: [];
   total_pages: number;
 }
 
-export interface DetailResponse {
+export interface IDetailResponse {
   title: string;
   original_title: string;
   name: string;
@@ -25,14 +25,14 @@ export interface DetailResponse {
   overview: string;
 }
 
-export interface ContentList {
+export interface IContentList {
   format: string;
-  content: ListResponse;
+  content: IListResponse;
 }
 
-export interface SearchResponse extends ListResponse {
+export interface ISearchResponse extends IListResponse {
 }
 
-export interface HandleChangeFunc {
+export interface IHandleChangeFunc {
   (event: object, value: number): void
 }

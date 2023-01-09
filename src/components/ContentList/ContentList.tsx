@@ -4,20 +4,20 @@ import Pagination from "@mui/material/Pagination";
 import {Loader} from "../Loader/Loader";
 import {Footer} from "../Footer/Footer";
 import {CLBox} from "./ContentList.styles";
-import {HandleChangeFunc} from "../../types/types";
+import {IHandleChangeFunc} from "../../types/types";
 import ScrollToTop from "react-scroll-to-top";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import {Box} from "@mui/material";
 
-interface Props {
+interface IProps {
   format: string;
   page: number;
   results: [];
   total_pages: number;
-  handleChange: HandleChangeFunc;
+  handleChange: IHandleChangeFunc;
 }
 
-export const ContentList: FC<Props> = ({format, page, results, total_pages, handleChange}) => {
+export const ContentList: FC<IProps> = ({format, page, results, total_pages, handleChange}) => {
 
   return (
     <Box>

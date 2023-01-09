@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {ContentList, DetailResponse, SearchResponse} from "../../types/types";
+import {IContentList, IDetailResponse, ISearchResponse} from "../../types/types";
 
-interface CounterState {
+interface ICounterState {
   contentList: object;
   detail: object;
   format: string;
@@ -19,19 +19,19 @@ const initialState = {
   searchValue: '',
   sort: 'popularity',
   topList: {}
-} as CounterState;
+} as ICounterState;
 
 const movieSlice = createSlice({
   name: "movie",
   initialState,
   reducers: {
-    addContentList(state, action: PayloadAction<ContentList>) {
+    addContentList(state, action: PayloadAction<IContentList>) {
       const {format, content} = action.payload
       state.contentList = content;
       state.format = format;
     },
 
-    addContentDetail(state, action: PayloadAction<DetailResponse>) {
+    addContentDetail(state, action: PayloadAction<IDetailResponse>) {
       state.detail = action.payload
     },
 
@@ -47,7 +47,7 @@ const movieSlice = createSlice({
       state.sort = action.payload
     },
 
-    addSearchList(state, action: PayloadAction<SearchResponse>) {
+    addSearchList(state, action: PayloadAction<ISearchResponse>) {
       state.searchList = action.payload
     },
 
