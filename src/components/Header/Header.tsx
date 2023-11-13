@@ -8,7 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import HomeIcon from '@mui/icons-material/Home';
 import Typography from "@mui/material/Typography";
-import {HeaderAppBar, HeaderLink, HeaderToolbar} from "./Header.styles";
+import {HeaderAppBar, HeaderBox, HeaderLink, HeaderToolbar} from "./Header.styles";
 import {Search} from "../Search/Search";
 import {Title} from "../Title/Title";
 
@@ -30,7 +30,7 @@ export const Header: FC = () => {
   };
 
   return (
-    <Box>
+    <HeaderBox>
       <Title/>
       <HeaderAppBar position="static">
         <HeaderToolbar>
@@ -52,7 +52,7 @@ export const Header: FC = () => {
               onClose={handleClose}
               MenuListProps={{
                 'aria-labelledby': 'basic-button',
-                sx: {backgroundColor: "gray"}
+                sx: {backgroundColor: "#1240AB"}
               }}
             >
 
@@ -86,6 +86,6 @@ export const Header: FC = () => {
 
         </HeaderToolbar>
       </HeaderAppBar>
-    </Box>
+    </HeaderBox>
   );
 };

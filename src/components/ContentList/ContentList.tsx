@@ -23,7 +23,12 @@ export const ContentList: FC<IProps> = ({format, page, results, total_pages, han
     <Box>
 
       {results && <CLBox>
-        <Pagination count={total_pages > 100 ? 100 : total_pages} siblingCount={0} page={page} onChange={handleChange}/>
+        <Pagination
+          color={'primary'}
+          count={total_pages > 100 ? 100 : total_pages}
+          siblingCount={0}
+          page={page}
+          onChange={handleChange}/>
       </CLBox>}
       {results ? results.map((result: any) =>
           <ContentUnit format={format} content={result} key={result.id}/>)
@@ -31,7 +36,12 @@ export const ContentList: FC<IProps> = ({format, page, results, total_pages, han
         <Loader/>
       }
       {results && <CLBox>
-        <Pagination count={total_pages > 100 ? 100 : total_pages} siblingCount={0} page={page} onChange={handleChange}/>
+        <Pagination
+          color={'primary'}
+          count={total_pages > 100 ? 100 : total_pages}
+          siblingCount={0}
+          page={page}
+          onChange={handleChange}/>
       </CLBox>}
 
       {results && <Footer/>}
@@ -44,7 +54,7 @@ export const ContentList: FC<IProps> = ({format, page, results, total_pages, han
         height={'50'}
         style={{
           borderRadius: '50%',
-          backgroundColor: 'grey',
+          backgroundColor: '#6C8AD5',
           width: '50px',
           height: '50px',
           boxShadow: '0 0 10px 2px black'

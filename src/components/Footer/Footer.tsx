@@ -1,14 +1,14 @@
-import {Typography} from "@mui/material";
 import {FooterBox} from "./Footer.styles";
 import {FC} from "react";
+import {UnitTopography} from "../ContentUnit/CounterUnit.styles";
 
 export const Footer: FC = () => {
   return (
     <footer>
       <FooterBox>
-        <Typography variant="subtitle1">
+        <UnitTopography variant="subtitle1">
           Все права защищены, но это не точно...
-        </Typography>
+        </UnitTopography>
       </FooterBox>
     </footer>
   );

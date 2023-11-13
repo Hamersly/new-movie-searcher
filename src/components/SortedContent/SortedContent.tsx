@@ -17,17 +17,20 @@ export const SortedContent: FC = () => {
   useEffect(() => {
     if (sorted.length > 0) dispatch(changeSort(sorted));
 
-  }, [sorted]);
+  }, [sorted, dispatch]);
 
   return (
     <div>
-      <FilterControl>
-        <InputLabel>Отображать</InputLabel>
+      <FilterControl sx={{color: 'white'}}>
+        <InputLabel sx={{color: 'white'}}>
+          Отображать...
+        </InputLabel>
         <Select
           value={sorted}
           onChange={handleChange}
           autoWidth
-          label="Отображать"
+          label="Отображать..."
+          sx={{backgroundColor: '#1240AB', color: 'white'}}
         >
           <MenuItem value={"popularity"}>
             <em>По популярности</em>

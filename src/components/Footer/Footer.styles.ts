@@ -5,7 +5,7 @@ export const FooterBox = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: gray;
+  background-color: #1240AB;
   height: 10vh;
 
 `

@@ -1,7 +1,6 @@
-import {Box} from "@mui/material";
 import React, {FC} from "react";
 import Backdrop from "@mui/material/Backdrop";
-import {UnitBox, UnitInfoBox, UnitLink, UnitTopography} from "./CounterUnit.styles";
+import {UnitBox, UnitImageBox, UnitInfoBox, UnitLink, UnitTopography} from "./CounterUnit.styles";
 import {IContent} from "../../types/types";
 
 interface IProps {
@@ -33,15 +32,15 @@ export const ContentUnit: FC<IProps> = ({format, content}) => {
 
   return (
     <UnitBox>
-      <Box>
+      <UnitImageBox>
         <img
           onClick={handleToggle}
           width="100px"
           alt=''
           src={`https://image.tmdb.org/t/p/w200${poster_path}`}
-          onError={({ currentTarget }) => {
+          onError={({currentTarget}) => {
             currentTarget.onerror = null
-            currentTarget.src=`${process.env.REACT_APP_ERROR_IMG}`
+            currentTarget.src = `${process.env.REACT_APP_ERROR_IMG}`
           }}
         />
         <Backdrop
@@ -54,14 +53,14 @@ export const ContentUnit: FC<IProps> = ({format, content}) => {
             width="100%"
             alt=''
             src={`https://image.tmdb.org/t/p/original${poster_path}`}
-            onError={({ currentTarget }) => {
+            onError={({currentTarget}) => {
               currentTarget.onerror = null
-              currentTarget.src=`${process.env.REACT_APP_ERROR_IMG}`
+              currentTarget.src = `${process.env.REACT_APP_ERROR_IMG}`
             }}
 
           />
         </Backdrop>
-      </Box>
+      </UnitImageBox>
       <UnitLink to={`${format}_${id}`}>
         <UnitInfoBox>
 

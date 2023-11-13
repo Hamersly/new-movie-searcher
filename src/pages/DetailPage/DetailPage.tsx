@@ -1,6 +1,5 @@
 import React, {FC, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import Typography from "@mui/material/Typography";
 import Backdrop from "@mui/material/Backdrop";
 import {useParams} from "react-router-dom";
 import {getContentDetails} from "../../store/movieLayer/actions";
@@ -9,6 +8,7 @@ import {clearDetail} from "../../store/movieLayer/slise";
 import {DetailBox, DetailContainer, DetailInfoBox} from "./DetailPage.styles";
 import {IDetailResponse} from "../../types/types";
 import {Loader} from "../../components/Loader/Loader";
+import {UnitTopography} from "../../components/ContentUnit/CounterUnit.styles";
 
 interface IParams {
   info: string
@@ -26,7 +26,7 @@ export const DetailPage: FC = () => {
   useEffect(() => {
     dispatch(clearDetail({}))
     dispatch(getContentDetails({format, id}));
-  }, [format]);
+  }, [format, dispatch, id]);
 
   const detail = useSelector(detailSelector);
   const {title, original_title, name, original_name, backdrop_path, overview}: IDetailResponse = detail
@@ -42,21 +42,21 @@ export const DetailPage: FC = () => {
     <DetailContainer>
       {detail ?
         <DetailBox>
-          <Typography variant="h4" align="center" mb={2}>
+          <UnitTopography variant="h4" align="center" mb={2}>
             {format === "movie" ? title : name}
-          </Typography>
-          <Typography variant="h5" align="center">
+          </UnitTopography>
+          <UnitTopography variant="h5" align="center">
             {format === "movie" ? original_title : original_name}
-          </Typography>
+          </UnitTopography>
           <DetailInfoBox>
             <img
               onClick={handleToggle}
               width="100%"
               alt=""
               src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
-              onError={({ currentTarget }) => {
+              onError={({currentTarget}) => {
                 currentTarget.onerror = null
-                currentTarget.src=`${process.env.REACT_APP_ERROR_IMG}`
+                currentTarget.src = `${process.env.REACT_APP_ERROR_IMG}`
               }}
             />
             <Backdrop
@@ -72,7 +72,7 @@ export const DetailPage: FC = () => {
             </Backdrop>
           </DetailInfoBox>
           <DetailInfoBox>
-            {overview ? <Typography variant="h6" align="center">{overview}</Typography>
+            {overview ? <UnitTopography variant="h6" align="center">{overview}</UnitTopography>
               :
               <Loader/>
             }

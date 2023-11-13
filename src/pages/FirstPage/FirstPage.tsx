@@ -38,7 +38,7 @@ export const FirstPage: FC = () => {
         height={'50'}
         style={{
           borderRadius: '50%',
-          backgroundColor: 'grey',
+          backgroundColor: '#6C8AD5',
           width: '50px',
           height: '50px',
           boxShadow: '0 0 10px 2px black'
