@@ -7,7 +7,7 @@ import {detailSelector} from "../../store/movieLayer/selectors";
 import {clearDetail} from "../../store/movieLayer/slise";
 import {DetailBox, DetailContainer, DetailInfoBox} from "./DetailPage.styles";
 import {IDetailResponse} from "../../types/types";
-import {Loader} from "../../components/Loader/Loader";
+import {Loader} from "../../components/UI/Loader/Loader";
 import {UnitTopography} from "../../components/ContentUnit/CounterUnit.styles";
 
 interface IParams {

@@ -5,7 +5,11 @@ import {Link} from "react-router-dom";
 import {Box} from "@mui/material";
 
 export const HeaderBox = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #1240AB;
+  height: 30vh;
 `
 
 export const HeaderAppBar = styled(AppBar)`

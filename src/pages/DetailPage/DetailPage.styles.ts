@@ -12,6 +12,9 @@ export const DetailBox = styled(Box)`
   flex-direction: column;
   align-items: center;
   margin: 30px 0;
+  background-color: #2A4380;
+  border-radius: 30px;
+  padding: 10px;
 `
 
 export const DetailInfoBox = styled(Box)`

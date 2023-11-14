@@ -6,7 +6,7 @@ import {IHandleChangeFunc, IListResponse} from "../../types/types";
 import {ContentList} from "../../components/ContentList/ContentList";
 import {SortedContent} from "../../components/SortedContent/SortedContent";
 import {CLBox} from "../../components/ContentList/ContentList.styles";
-import {Box} from "@mui/material";
+import {ContentPageBox} from "./ContentListPage.styles";
 
 interface IProps {
   format: string
@@ -20,14 +20,14 @@ export const ContentListPage: FC<IProps> = ({format}) => {
 
   useEffect(() => {
     dispatch(getContentList({format, sorted, page}));
-  }, [format, sorted]);
+  }, [format, sorted, dispatch, page]);
 
   const handleChange: IHandleChangeFunc = (event: object, value: number) => {
     dispatch(getContentList({format, sorted, page: value}));
   };
 
   return (
-    <Box>
+    <ContentPageBox>
       <CLBox>
         <SortedContent/>
       </CLBox>
@@ -39,6 +39,6 @@ export const ContentListPage: FC<IProps> = ({format}) => {
         total_pages={total_pages}
         handleChange={handleChange}
       />
-    </Box>
+    </ContentPageBox>
   )
 };

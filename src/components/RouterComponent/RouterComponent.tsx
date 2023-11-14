@@ -1,4 +1,4 @@
-import {FC} from "react";
+import React, {FC} from "react";
 import {RouterBox} from "./RouterComponent.styles";
 import {HashRouter, Redirect, Route, Switch} from "react-router-dom";
 import {Header} from "../Header/Header"
@@ -6,6 +6,7 @@ import {FirstPage} from "../../pages/FirstPage/FirstPage";
 import {ContentListPage} from "../../pages/ContentListPage/ContentListPage";
 import {DetailPage} from "../../pages/DetailPage/DetailPage";
 import {SearchPage} from "../../pages/SearchPage/SearchPage";
+import {Footer} from "../Footer/Footer";
 
 export const RouterComponent: FC = () => {
 
@@ -36,6 +37,7 @@ export const RouterComponent: FC = () => {
 
           <Redirect to="/"/>
         </Switch>
+        <Footer/>
       </HashRouter>
     </RouterBox>
   );
