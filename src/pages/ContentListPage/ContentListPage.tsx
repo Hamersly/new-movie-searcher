@@ -5,8 +5,8 @@ import {getContentList} from "../../store/movieLayer/actions";
 import {IHandleChangeFunc, IListResponse} from "../../types/types";
 import {ContentList} from "../../components/ContentList/ContentList";
 import {SortedContent} from "../../components/SortedContent/SortedContent";
-import {CLBox} from "../../components/ContentList/ContentList.styles";
-import {ContentPageBox} from "./ContentListPage.styles";
+import {CLBox} from "../../components/ContentList/ContentList.styled";
+import {ContentPageBox} from "./ContentListPage.styled";
 
 interface IProps {
   format: string

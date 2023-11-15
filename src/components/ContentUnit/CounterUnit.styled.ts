@@ -23,7 +23,6 @@ export const UnitImageBox = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: center;
-  //background-color: yellow;
 `
 
 export const UnitTopography = styled(Typography)`

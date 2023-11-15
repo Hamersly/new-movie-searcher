@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import {RouterBox} from "./RouterComponent.styles";
+import {RouterBox} from "./RouterComponent.styled";
 import {HashRouter, Redirect, Route, Switch} from "react-router-dom";
 import {Header} from "../Header/Header"
 import {FirstPage} from "../../pages/FirstPage/FirstPage";

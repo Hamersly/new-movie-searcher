@@ -2,7 +2,7 @@ import {FC, useEffect, useState} from "react";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select, {SelectChangeEvent} from '@mui/material/Select';
-import {FilterControl} from "./SortedContent.styles";
+import {FilterControl} from "./SortedContent.styled";
 import {useDispatch} from "react-redux";
 import {changeSort} from "../../store/movieLayer/slise";
 

@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import {TitleBox, TitleLink, TitleOneTopography, TitleTwoTopography} from "./Title.styles";
+import {TitleBox, TitleLink, TitleOneTopography, TitleTwoTopography} from "./Title.styled";
 
 export const Title: FC = () => {
   return (

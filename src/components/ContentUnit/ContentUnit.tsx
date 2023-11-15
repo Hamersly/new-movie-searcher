@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import Backdrop from "@mui/material/Backdrop";
-import {UnitBox, UnitImageBox, UnitInfoBox, UnitLink, UnitTopography} from "./CounterUnit.styles";
+import {UnitBox, UnitImageBox, UnitInfoBox, UnitLink, UnitTopography} from "./CounterUnit.styled";
 import {IContent} from "../../types/types";
 
 interface IProps {

@@ -1,6 +1,6 @@
-import {FooterBox} from "./Footer.styles";
+import {FooterBox} from "./Footer.styled";
 import {FC} from "react";
-import {UnitTopography} from "../ContentUnit/CounterUnit.styles";
+import {UnitTopography} from "../ContentUnit/CounterUnit.styled";
 
 export const Footer: FC = () => {
   return (

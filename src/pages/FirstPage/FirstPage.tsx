@@ -1,11 +1,11 @@
 import React, {FC, useEffect} from "react";
-import {FirstContent, FirstTopography} from "./FirstPage.styles";
+import {FirstContent, FirstTopography} from "./FirstPage.styled";
 import {useDispatch, useSelector} from "react-redux";
 import {getTopList} from "../../store/movieLayer/actions";
 import {topSelector} from "../../store/movieLayer/selectors";
 import {ContentUnit} from "../../components/ContentUnit/ContentUnit";
 import {Loader} from "../../components/UI/Loader/Loader";
-import {ContentPageBox} from "../ContentListPage/ContentListPage.styles";
+import {ContentPageBox} from "../ContentListPage/ContentListPage.styled";
 import {Scroll} from "../../components/UI/Scroll/Scroll";
 
 export const FirstPage: FC = () => {

@@ -8,7 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import HomeIcon from '@mui/icons-material/Home';
 import Typography from "@mui/material/Typography";
-import {HeaderAppBar, HeaderBox, HeaderLink, HeaderToolbar} from "./Header.styles";
+import {HeaderAppBar, HeaderBox, HeaderLink, HeaderToolbar} from "./Header.styled";
 import {Search} from "../Search/Search";
 import {Title} from "../Title/Title";
 

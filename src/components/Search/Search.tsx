@@ -2,7 +2,7 @@ import {FC, useState} from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import {useDispatch} from "react-redux";
 import {searchValue} from "../../store/movieLayer/actions";
-import {SearchIconWrapper, SearchTag, StyledInputBase} from "./Search.styles"
+import {SearchIconWrapper, SearchTag, StyledInputBase} from "./Search.styled"
 import {useHistory} from "react-router-dom"
 
 

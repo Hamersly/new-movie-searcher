@@ -2,12 +2,6 @@ import axios from "axios";
 import {IDetailResponse, IListResponse, ISearchResponse} from "../../types/types";
 
 
-// const proxy = {
-//     protocol: 'https',
-//     host: '142.93.151.99',
-//     port: 45365,
-//   }
-
 export async function listApi(
   format: string,
   sort: string,

@@ -6,4 +6,5 @@ export const ContentPageBox = styled(Box)`
   min-height: 60vh;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `

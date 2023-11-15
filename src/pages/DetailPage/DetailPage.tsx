@@ -5,10 +5,11 @@ import {useParams} from "react-router-dom";
 import {getContentDetails} from "../../store/movieLayer/actions";
 import {detailSelector} from "../../store/movieLayer/selectors";
 import {clearDetail} from "../../store/movieLayer/slise";
-import {DetailBox, DetailContainer, DetailInfoBox} from "./DetailPage.styles";
+import {DetailBox, DetailInfoBox} from "./DetailPage.styled";
 import {IDetailResponse} from "../../types/types";
 import {Loader} from "../../components/UI/Loader/Loader";
-import {UnitTopography} from "../../components/ContentUnit/CounterUnit.styles";
+import {UnitTopography} from "../../components/ContentUnit/CounterUnit.styled";
+import {ContentPageBox} from "../ContentListPage/ContentListPage.styled";
 
 interface IParams {
   info: string
@@ -39,7 +40,7 @@ export const DetailPage: FC = () => {
   };
 
   return (
-    <DetailContainer>
+    <ContentPageBox>
       {detail ?
         <DetailBox>
           <UnitTopography variant="h4" align="center" mb={2}>
@@ -51,7 +52,7 @@ export const DetailPage: FC = () => {
           <DetailInfoBox>
             <img
               onClick={handleToggle}
-              width="100%"
+              width="90%"
               alt=""
               src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
               onError={({currentTarget}) => {
@@ -81,6 +82,6 @@ export const DetailPage: FC = () => {
         :
         <Loader/>
       }
-    </DetailContainer>
+    </ContentPageBox>
   );
 };
