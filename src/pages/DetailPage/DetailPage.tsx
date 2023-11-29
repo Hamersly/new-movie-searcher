@@ -53,6 +53,7 @@ export const DetailPage: FC = () => {
             <img
               onClick={handleToggle}
               width="90%"
+              height="auto"
               alt=""
               src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
               onError={({currentTarget}) => {
@@ -67,6 +68,7 @@ export const DetailPage: FC = () => {
             >
               <img
                 width="100%"
+                height="auto"
                 alt=''
                 src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
               />

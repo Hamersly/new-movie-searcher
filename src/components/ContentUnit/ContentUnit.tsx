@@ -50,7 +50,8 @@ export const ContentUnit: FC<IProps> = ({format, content}) => {
 
         >
           <img
-            width="100%"
+            width="auto"
+            height="100%"
             alt=''
             src={`https://image.tmdb.org/t/p/original${poster_path}`}
             onError={({currentTarget}) => {
