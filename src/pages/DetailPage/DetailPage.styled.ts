@@ -17,6 +17,9 @@ export const DetailBox = styled(Box)`
 
 export const DetailInfoBox = styled(Box)`
   display: flex;
+  flex-direction: column;
   margin: 30px 0 0 0;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
 `

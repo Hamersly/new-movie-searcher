@@ -52,8 +52,6 @@ export const DetailPage: FC = () => {
           <DetailInfoBox>
             <img
               onClick={handleToggle}
-              width="90%"
-              height="auto"
               alt=""
               src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
               onError={({currentTarget}) => {
@@ -73,9 +71,7 @@ export const DetailPage: FC = () => {
                 src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
               />
             </Backdrop>
-          </DetailInfoBox>
-          <DetailInfoBox>
-            {overview ? <UnitTopography variant="h6" align="center">{overview}</UnitTopography>
+            {overview ? <UnitTopography variant="h6" align="center" mt={4}>{overview}</UnitTopography>
               :
               <Loader/>
             }

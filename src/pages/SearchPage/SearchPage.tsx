@@ -32,7 +32,7 @@ export const SearchPage: FC = () => {
           <UnitTopography variant="h4" align="center" mb={2}>
             Ничего не найдено:(
           </UnitTopography>
-        :
+          :
           <Loader/>
       }
     </ContentPageBox>
